@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheTemplatesHub</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  body{
+    background: linear-gradient(90deg, #ebb032, #e55611) !important;
+    color: white;
+    font-family: "Poppins", serif;
+  }
+</style>
+<body>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">TheTemplatesHub Backend Testing UI</h2>
+  <form>
+    <!-- Personal Information -->
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="first_name" placeholder="Enter your first name" required>
+        </div>
+        
+        <div class="col-md-6">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="last_name" placeholder="Enter your last name" required>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="col-md-6">
+        <label for="mobile" class="form-label">Mobile</label>
+        <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number" required>
+        </div>
+    </div>
+
+    <!-- Company Information -->
+    <div class="row mb-3">
+        <div class="col-md-6">
+        <label for="company_name" class="form-label">Company Name</label>
+        <input type="text" class="form-control" id="company_name" placeholder="Enter your company name" required>
+        </div>
+
+        <div class="col-md-6">
+        <label for="company_size" class="form-label">Company Size</label>
+        <input type="number" class="form-control" id="company_size" placeholder="Enter your company size" required>
+        </div>
+    </div>
+
+    <!-- Job Details -->
+    <div class="row mb-3">
+        <div class="col-md-6">
+        <label for="job_title" class="form-label">Job Title</label>
+        <input type="text" class="form-control" id="job_title" value="Tester" required>
+        </div>
+
+        <div class="col-md-6">
+        <label for="purpose" class="form-label">Purpose</label>
+        <input type="text" class="form-control" id="purpose" value="For Hiring" required>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+        <label for="how_to_know" class="form-label">How did you know about this job?</label>
+        <input type="text" class="form-control" id="how_to_know" value="LinkedIn" required>
+        </div>
+
+        <div class="col-md-6">
+        <label for="format_option" class="form-label">Preferred Format</label>
+        <input type="text" class="form-control" id="format_option" value="US Paper" required>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+        <label for="prefered_file_types" class="form-label">Preferred File Types</label>
+        <input type="text" class="form-control" id="prefered_file_types" value="Google" required>
+        </div>
+
+        <div class="col-md-6">
+        <label for="plan_type" class="form-label">Plan Type</label>
+        <select class="form-select" id="plan_type">
+        <option value="free-trail">Free Trial</option>
+        <option value="single-purchase">Single Purchase</option>
+        <option value="monthly">Monthly</option>
+        <option value="yearly">Yearly</option>
+        </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+        <label for="product_id" class="form-label">Product</label>
+        <select class="form-select" id="product_id" required>
+        <option value="prod_01JBBSVFS4EDMDBEJNHZ9BW4G2">Offer of Employment</option>
+        <option value="prod_01JBBSQVPJYK5ED7NFP31D0TAS">Mentoring Action Plan</option>
+        <option value="prod_01JBBSKTVW585VN6C5FRKT7DAS">How to Develop an Employee Retention</option>
+        <option value="prod_01JB400Y3H00C5V4XQYEKRZ9A4">How to Create a Staffing Plan</option>
+        <option value="prod_01JBBTSC177NMM6DPV2JXC77V8">Monthly Church Report 2</option>
+        <option value="prod_01JBBTWHMWZ65CZRN9YVV8PMVT">Performance Improvement Plan</option>
+        <option value="prod_01JBBK8KV2AP980WY2JJETXMCT">How to Raise Capital</option>
+        <option value="prod_01JBBK1GSYGK30X3SADMPWADF0">How to Manage a Payroll System</option>
+        <option value="prod_01JBBJCG7MW9S4HM81A7BE2Z3A">How to Develop a Compensation Plan</option>
+        </select>
+        </div>
+
+        <div class="col-md-6">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter your password" value="password" required>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" id="submitButton">
+      Submit
+    </button>
+    <span id="loadingSpinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+
+    <div class="mt-5">
+      <h3>Old User? Enter your email to retrieve your information:</h3>
+      <div class="row mb-3">
+        <div class="col-md-6">
+      
+          <!-- <label for="user_email" class="form-label">Email</label> -->
+          <input type="email" class="form-control" id="user_email" placeholder="Enter your email">
+        </div>
+        <div class="col-md-6">
+          <button type="button" class="btn btn-secondary" id="getUserInfoButton">Get Details</button>
+          <span id="userLoadingSpinner" style="display: none;">Loading...</span>
+        </div>
+        </div>
+      
+      <div id="userDetails"></div>
+    </div>
+  </form>
+</div>
+<!-- Modal for success message -->
+<!-- Modal for success and error messages -->
+<div class="modal fade" id="commonModal" tabindex="-1" aria-labelledby="commonModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle" style="color:black;">Modal Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBody" style="color:black;">
+        <!-- Modal content will be injected dynamically -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.querySelector("form").addEventListener("submit", async (event) => {
+    event.preventDefault(); // Prevent form submission
+    
+    const submitButton = document.getElementById("submitButton");
+    const loadingSpinner = document.getElementById("loadingSpinner");
+
+    // Disable button and show spinner
+    submitButton.disabled = true;
+    loadingSpinner.style.display = "inline-block";
+
+    // Collect form data
+    const formData = {
+      first_name: document.getElementById("first_name").value,
+      last_name: document.getElementById("last_name").value,
+      mobile: document.getElementById("mobile").value,
+      email: document.getElementById("email").value,
+      company_name: document.getElementById("company_name").value,
+      company_size: document.getElementById("company_size").value,
+      job_title: document.getElementById("job_title").value,
+      purpose: document.getElementById("purpose").value,
+      how_to_know: document.getElementById("how_to_know").value,
+      format_option: document.getElementById("format_option").value,
+      prefered_file_types: document.getElementById("prefered_file_types").value,
+      plan_type: document.getElementById("plan_type").value,
+      product_id: document.getElementById("product_id").value,
+      password: document.getElementById("password").value
+    };
+
+    try {
+      // Make API request
+      const response = await fetch("https://flow.colakin.com/webhook/receive-data-v2", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log("Response received:", result);
+
+        // Check if status is 'completed' and document_link is present
+        if (result.status === 'completed' && result.document_link) {
+          window.location.href = result.document_link; // Redirect to the document link
+        } else {
+          alert("Error: Document link not found or status not completed.");
+        }
+      } else {
+        console.error("Error:", response.statusText);
+        alert(`Error submitting the form. Status: ${response.status} - ${response.statusText}`);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert(`An error occurred while submitting the form: ${error.message}`);
+    } finally {
+      // Re-enable button and hide spinner
+      submitButton.disabled = false;
+      loadingSpinner.style.display = "none";
+    }
+  });
+
+
+  document.getElementById("getUserInfoButton").addEventListener("click", async () => {
+    const userEmail = document.getElementById("user_email").value;
+    const userDetailsDiv = document.getElementById("userDetails");
+    const userLoadingSpinner = document.getElementById("userLoadingSpinner");
+    userDetailsDiv.innerHTML = "";
+    userLoadingSpinner.style.display = "inline-block";
+
+    // Send email in body for API call
+    const response = await fetch("https://flow.colakin.com/webhook/get-user-info", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email: userEmail })
+    });
+
+    const result = await response.json();
+    userLoadingSpinner.style.display = "none";
+
+    if (response.ok && result && result.email === userEmail) {
+      // Populate form with user data
+      document.getElementById("first_name").value = result.first_name;
+      document.getElementById("last_name").value = result.last_name;
+      document.getElementById("mobile").value = result.mobile;
+      document.getElementById("email").value = result.email;
+      document.getElementById("company_name").value = result.company_name;
+      document.getElementById("company_size").value = result.company_size;
+      document.getElementById("job_title").value = result.job_title;
+      document.getElementById("purpose").value = result.purpose;
+      document.getElementById("how_to_know").value = result.how_to_know;
+      document.getElementById("format_option").value = result.format_option;
+      document.getElementById("prefered_file_types").value = result.prefered_file_types;
+      document.getElementById("plan_type").value = result.plan_type;
+      document.getElementById("product_id").value = result.product_id;
+
+      modalTitle.innerText = "Success!";
+      modalBody.innerHTML = "<p>User details retrieved successfully!</p>";
+    } else {
+      // userDetailsDiv.innerHTML = "<p>User not found. Please register.</p>";
+      modalTitle.innerText = "Error";
+      modalBody.innerHTML = "<p>User not found. Please register.</p>";
+    }
+    const myModal = new bootstrap.Modal(document.getElementById('commonModal'));
+    myModal.show();
+  });
+
+</script>
+</body>
+</html>
