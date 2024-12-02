@@ -213,7 +213,8 @@
 
         // Check if status is 'completed' and document_link is present
         if (result.status === 'completed' && result.document_link) {
-          window.location.href = result.document_link; // Redirect to the document link
+          // window.location.href = result.document_link; // Redirect to the document link
+          window.open(result.document_link, '_blank');
         } else {
           alert("Error: Document link not found or status not completed.");
         }
