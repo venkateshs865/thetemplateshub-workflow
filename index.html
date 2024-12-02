@@ -213,11 +213,13 @@
 
         // Check if status is 'completed' and document_link is present
         if (result.status === 'completed' && result.document_link) {
-          // window.location.href = result.document_link; // Redirect to the document link
-          window.open(result.document_link, '_blank');
+            window.open(result.document_link, '_blank'); // Open the document link in a new tab
+        } else if (result.status === 'plan_expires') {
+            alert("Warning: Your Template limit was reached. Upgrade your plan");
         } else {
-          alert("Error: Document link not found or status not completed.");
+            alert("Warning: Document link not found or status not completed.");
         }
+
       } else {
         console.error("Error:", response.statusText);
         alert(`Error submitting the form. Status: ${response.status} - ${response.statusText}`);
